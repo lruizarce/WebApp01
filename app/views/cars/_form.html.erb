@@ -4,9 +4,9 @@
       <h2><%= pluralize(car.errors.count, "error") %> prohibited this car from being saved:</h2>
 
       <ul>
-      <% car.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% car.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -28,7 +28,12 @@
 
   <div class="field">
     <%= form.label :make_id %>
-    <%= form.text_field :make_id %>
+    <%= form.collection_select :make_id, Make.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :part_id %><br>
+    <%= form.collection_select(:part_ids, @parts, :id, :name) %>
   </div>
 
   <div class="actions">
