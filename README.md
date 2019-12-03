@@ -1,24 +1,11 @@
-# README
+Assignment 1 was to create 3 scaffolds, add a drop down menu to the application and add relationships between models.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Creating Scaffolds
+$rails generate scaffold Part name:string
+$rails generate scaffold Make name:string country:string
+$rails generate scaffold Car name:string model:string vin:integer make:references
+$rails generate model car_part car:references part:references
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Drop down menu was added to the views
+Relationships were added in the models 
